@@ -1,0 +1,46 @@
+* {
+	outline: none;
+}
+.land_body{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 5rem;
+}
+.right{
+    max-width: 34rem;
+}
+.image{
+    width: 100%;
+height: auto;
+}
+.left{
+    text-align: center;
+    height: 50%;
+    margin: auto;
+
+}
+.button{
+ 
+
+}
+.btton{
+    border-radius: 20px;
+
+}
+@media screen and (min-width: 601px) {
+  
+}
+@media screen and (max-width: 600px) {
+    .left_text{
+      font-size: 30px;
+    }
+    .land_body{
+        margin-top: 2rem;
+        
+    }
+    .left{
+        margin-bottom: 1rem;
+    }
+
+  }

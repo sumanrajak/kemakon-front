@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Nav from './Nav'
+import Cards from './Cards'
+import {BrowserRouter, Route} from 'react-router-dom'
+import Home from './screens/Home'
+import Product from './screens/Product'
+import Cart from './screens/Cart'
+import Login from './screens/Login'
 
+//https://oldamazona.webacademy.pro/cart/5f65ed2cb4ff4b32a5ba5ace?qty=1
 function App() {
   return (
+    
+      
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="Navv">
+        <Nav></Nav>
+      </div>
+      <Route path='/' component={Home} exact></Route>
+      <Route path='/product/:id' component={Product}></Route>
+      <Route path='/cart' component={Cart}></Route>
+      <Route path='/login' component={Login}></Route>
+
+
+     
     </div>
+    </BrowserRouter>
+
   );
 }
 
