@@ -1,22 +1,31 @@
 .login{
     
-  
+    margin: auto;
+  width: 50%;
+  /* border: 3px solid green; */
+  padding: 10px;
+  margin-top: 10%;
+  margin-bottom: 300px;
+
   
 
 
 }
 .logind{
-display: flexbox;
-padding-top: 22px;
-justify-content: space-between;}
+}
 
 .fb{
-    padding-top: 15px;  
+    
 }
 .log_body{
-    width: 20rem;
-    padding: 2rem;
+   
     
     
 
+}
+@media only screen and (max-width: 600px) {
+  
+  .login{
+width: 90%;
+  }
 }

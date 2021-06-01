@@ -1,0 +1,41 @@
+*{
+margin: 0;
+padding: 0;
+
+
+}
+
+.footer{
+    
+z-index: 0;
+    background-color: lightcoral;
+color: rgb(255, 255, 255);
+position: relative;
+bottom: 0;
+width: 100%;
+padding-top: 5px;
+display: block;
+padding: 27px;
+
+
+}
+ul {
+    list-style-type:  none;
+}
+a:link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+  a {
+    color: rgb(255, 255, 255);;
+  }
+  a:hover {
+    color: rgb(255, 255, 255);
+  }
+  h3{
+   color: rgb(255, 255, 255);
+  }
+ .copyright{
+    color: rgb(255, 255, 255);
+
+ }

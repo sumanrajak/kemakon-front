@@ -1,9 +1,9 @@
 .nav_body{
     display: flex;
     padding: 10px;
-    background-color: lightcoral;
+    background-color: rgb(248, 131, 131);
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     z-index: 1;
 
 }
@@ -17,9 +17,11 @@
 
 }
 .nav_side{
-    background-color: lightgoldenrodyellow;
+    background-color: lightcoral;
     height: 100vh;
     justify-content: space-between;
+    color: azure;
+    
 
 }
 .nav_active{
@@ -29,7 +31,7 @@
     top:0;
     position: fixed;
     
-    transition: 850ms;
+    transition: 550ms;
 
 }
 .nav_inactive{
@@ -51,7 +53,7 @@
 .text{
 padding: 15px;
 text-align: center;
-font-weight: 100;
+font-weight: 300;
 font-size:large;
 ;
 

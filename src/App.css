@@ -1,8 +1,9 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
 
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Original Surfer', cursive;
 }
 .products{
   display: flex;
@@ -15,9 +16,42 @@
 .Navv{
   z-index: 10000;
 }
-.cd_body:hover{
-  box-shadow: 5px 10px 20px 1px rgb(0,0,0,0.253);
+.cd_body{
+ 
+  margin: 2rem;
+  width:20%;
+  border-bottom: solid 1px rgb(104, 102, 102) ;
+
+}
+.cd_image{
+  width:100%;
+  height:auto;
 }
 .cd_image:hover{
   opacity: .9;
+}
+@media only screen and (max-width: 600px) {
+  .products{
+    padding: 2px;
+
+  }
+  .cd_body{
+    width:48%;
+    margin:0px;
+    margin:1px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-bottom: solid 1px rgb(104, 102, 102) ;
+  }
+  .cd_image{
+    width:100%;
+    height:auto;
+  }
+
+}
+/* style={{ height:'28rem' , objectfit : 'cover' ,padding: '2px' ,width:"auto"}} */
+@media screen and (max-width: 600px) {
+h3{
+  font-size: 20px;
+}
 }

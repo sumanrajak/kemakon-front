@@ -44,12 +44,17 @@
     width: 100%;
 height: auto;
 }
-.left{
+.left {
     text-align: center;
     height: 50%;
     margin: auto;
 
 }
+.totalh{
+    font-size: 20px;
+    color: white;
+}
+
   .CART_total{
       background-color:lightcoral;
       overflow: hidden;

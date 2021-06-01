@@ -12,22 +12,27 @@ import {useSelector,useDispatch} from "react-redux"
 
 const Home = () => {
  const [product,SetProduct]=useState([]);
+ const productList=useSelector(state=> state.productList)
+ const {products,loading,error}=productList;
+//  SetProduct(productx)
+ console.log(products)
  const dispatch = useDispatch();
 
       useEffect(() => {
-            const fetchdata= async ()=>{
-                    console.log("running")
-                  const {data}= await axios.get('/api/products');
-                 console.log(data) 
-                  console.log("running22")
+        dispatch(listProduct())
+            // const fetchdata= async ()=>{
+            //         console.log("running")
+            //       const {data}= await axios.get('/api/products');
+            //      console.log(data) 
+            //       console.log("running22")
 
-                  SetProduct(data);
-                  dispatch(listProduct(data));
+            //       SetProduct(data);
+            //      // dispatch(listProduct(data));
 
 
-            };
+            // };
            
-            fetchdata();
+            // fetchdata();
            
       }, [])
 
@@ -35,19 +40,19 @@ const Home = () => {
 useEffect(() => {
 }, [])
 
-    return (
+    return (loading?<div>loading</div>: error?<div>{error}</div>:
         <div>
             
             <Land/>
-            <h2 style={{marginLeft:"20px"}}>STORE</h2>
+            <h2 style={{marginLeft:"50px"}}>STORE</h2>
 
 
-            <div className="products"> 
+            <div className="products" style={{marginBottom:"100px"}}> 
 
-{product.map( product =>
-   <div className="cd_body" style={{ margin:"2rem"}}>
-   <div className="cd_image">
-     <img src={logo} style={{ height:'28rem' , objectfit : 'cover' ,padding: '2px' ,width:"auto"}}></img>
+{  products.map( product =>
+   <div className="cd_body" >
+   <div className="">
+     <img src={product.image} className="cd_image" ></img>
    </div>
    <div className="cd_title" style={{textAlign:"center" ,fontSize:"auto" ,marginTop:"2px"}}>
      <h5>{product.name}</h5>
@@ -57,7 +62,7 @@ useEffect(() => {
    </div>
    <div className="cdorder" style={{display:"flex" ,justifyContent:"space-around" ,marginBottom:"2vh", alignItems:"center"}}>
    <div className="cd_price" ><h6>₹{product.price}</h6></div>
-  <Link to={`/product/${product.id}`}><Button variant="danger"  style={{borderRadius:"20px" }}>MORE DETAILS</Button></Link> 
+  <Link to={`/product/${product._id}`}><button variant="danger"  style={{backgroundColor:"#F64B3C", color:"white",outline:"none",borderRadius:"18px",border:"none",width:'60px',height:"30px" }}>VIEW</button></Link> 
   
   
    </div>

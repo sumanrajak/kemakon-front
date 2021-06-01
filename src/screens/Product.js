@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../MODEL.jpg';
 
 import {Link} from 'react-router-dom'
@@ -6,28 +6,46 @@ import Button from 'react-bootstrap/Button'
 import { useSelector ,useDispatch } from 'react-redux';
 import { addtocart } from '../actions/cartAction';
 import {connect} from "react-redux";
+import Axios from './axios';
 
 
 
 const Product = (props) => {
-    const data = useSelector(state => state.productList)
-    console.log(data)
+    // const data = useSelector(state => state.productList)
+    // console.log(data)
     // data.product.map(x=>console.log(x.id))
-    const product= data.products.find(x=>x.id == props.match.params.id)
-    console.log(product)
+    // const product= data.products.find(x=>x.id == props.match.params.id)
+    // console.log(product)
+    const [product, setproduct] = useState(undefined)
     const dispatch = useDispatch()
     const add =()=>{
       console.log(product.name+" added")
       dispatch(addtocart(product,product.id,1))
 
     }
+    useEffect(() => {
+      const fetchdata= async()=>{
+        console.log(props.match.params.id);
+        await Axios.post(`/pdp/${props.match.params.id}`).then((res)=>{
+          console.log(res.data);
+          if(res.data.msg=='error'){
+            console.log(res.data);
+          }else{
+              setproduct(res.data)
+          }
+      })
+      }
+      fetchdata();
+
+
+    }, [])
     return (
         (!product?<div>no data</div>:<div>
             
             <Link to='/'> <Button className="button" style={{borderRadius:"40px" ,margin:"1rem" ,  textAlign: "center" ,fontSize: "10px"  }}>back</Button></Link>
             <div className="body" style={{display: "flex", justifyContent: "space-around",flexWrap: "wrap" ,marginTop:"1rem"}} >
                 <div className="left_img" style={{maxWidth:"26rem"}}>
-                <img src={logo} style={{  objectfit : 'cover' ,padding: '2px' ,width:"100%",height:"auto"}}></img>
+                <img src={product.image} style={{  objectfit : 'cover' ,padding: '2px' ,width:"100%",height:"auto"}}></img>
 
                 </div>
                 <div className="rifht" style={{display:"flex" ,flexWrap: "wrap",justifyContent:"space-evenly", width:"auto" ,}}>

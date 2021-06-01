@@ -1,0 +1,30 @@
+.orderrr{
+    margin: 50px;
+    /* width: 100%; */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+p{
+margin: 0px;
+margin-bottom: 0rem;
+}
+.orderrow{
+   
+}
+
+@media screen and (max-width: 600px) {
+
+.orderrr {
+    margin: 20px;
+    /* width: 100%; */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border: solid 1px orangered;
+}
+.email{
+    font-size: 10px;
+}
+}
